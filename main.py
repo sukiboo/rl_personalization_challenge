@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # evaluate the agent
     S = env.observe(10000)
     A = agent(S).numpy().argmax(axis=1)
-    R = env.get_normalized_reward(S,A)
+    R = env.compute_reward(S,A)
     print(f'\nagent evaluation reward = {R.mean():.4f}')
     hist = np.histogram(A, bins=np.arange(env.num_a+1), density=True)[0]
     print(f'agent action selection histogram:\n{-np.sort(-hist)}')

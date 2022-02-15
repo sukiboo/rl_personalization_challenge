@@ -79,7 +79,7 @@ class SampleEnv(gym.Env):
 
     def step(self, action_index):
         '''given an observed state take an action and receive reward'''
-        reward = self.get_normalized_reward(self.state, action_index).item()
+        reward = self.compute_reward(self.state, action_index).item()
         done = True
         info = {}
         return self.state, reward, done, info
