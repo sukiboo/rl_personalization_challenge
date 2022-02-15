@@ -25,7 +25,7 @@ Other useful methods include
 ## Results
 By default the reward values returned by the environment are *normalized*, i.e. the optimal reward for any state `s` is `1` and the average reward is `0`.
 Hence any sensible agent should achieve a positive return and the optimal agent has the return of `1`.
-For example, the current baseline agent achieves a performance score of `0.237`.
+For example, the current baseline agent achieves a performance score of `0.2354`.
 
 The intended outcome is to train an agent that demonstrates a *good* performance, e.g. `> 0.8` or so.
 If you manage to obtain such an agent, please let me know!
