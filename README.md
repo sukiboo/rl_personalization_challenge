@@ -16,6 +16,7 @@ The generated `SampleEnv` environment inherits from `gym.Env` and, as such, has 
 
 The above methods are technically sufficient to solve the environment.
 Other useful methods include
+* `evaluate_agent(agent)` --- compute the *deterministic* performance of the agent's policy on the environment
 * `restart()` --- fully recreate the environment; should be called between the training of different agents for reproducibility
 * `observe(num=1)` --- observe new states; identical to `reset` but can sample multiple states (`num`) simultaneously
 * `compute_reward(s,a_ind)` --- compute the *normalized* reward for a state `s` and an action index `a_ind`
@@ -25,7 +26,7 @@ Other useful methods include
 ## Results
 By default the reward values returned by the environment are *normalized*, i.e. the optimal reward for any state `s` is `1` and the average reward is `0`.
 Hence any sensible agent should achieve a positive return and the optimal agent has the return of `1`.
-For example, the current baseline agent achieves a performance score of `0.2354`.
+For example, the current baseline agent achieves a performance score of `0.2318`.
 
 The intended outcome is to train an agent that demonstrates a *good* performance, e.g. `> 0.8` or so.
 If you manage to obtain such an agent, please let me know!
