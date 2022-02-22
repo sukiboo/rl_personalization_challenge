@@ -43,7 +43,7 @@ if __name__ == '__main__':
 
             # record training data
             rewards.append(reward)
-            losses.append(loss)
+            losses.append(loss.numpy().item())
 
         # train the agent
         grads = tape.gradient(loss, agent.trainable_variables)
