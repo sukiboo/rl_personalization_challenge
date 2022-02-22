@@ -101,6 +101,15 @@ class SampleEnv(gym.Env):
         hist = np.histogram(R.argmax(axis=1), bins=np.arange(self.num_a+1), density=True)[0]
         print(f'optimal action distribution:\n{-np.sort(-hist)}')
 
+    def evaluate_agent(self, agent, num_s=100000):
+        '''evaluate the agent's performance on the randomly sampled states'''
+        S = self.observe(num=num_s)
+        A = agent(S).numpy().argmax(axis=1)
+        R = self.compute_reward(S,A)
+        hist = np.histogram(A, bins=np.arange(self.num_a+1), density=True)[0]
+        print(f'\nagent evaluation reward = {R.mean():.4f}')
+        print(f'agent action selection histogram:\n{-np.sort(-hist)}')
+
 
 class SyntheticGaussianMapping:
     '''generate synthetic feature extractor'''

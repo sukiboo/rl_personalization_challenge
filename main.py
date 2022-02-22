@@ -8,16 +8,6 @@ np.set_printoptions(precision=4, suppress=True)
 tf.random.set_seed(2022)
 
 
-def evaluate_agent(agent, env, num_s=100000):
-    '''evaluate the agent's performance on the randomly sampled states'''
-    S = env.observe(num=num_s)
-    A = agent(S).numpy().argmax(axis=1)
-    R = env.compute_reward(S,A)
-    print(f'\nagent evaluation reward = {R.mean():.4f}')
-    hist = np.histogram(A, bins=np.arange(env.num_a+1), density=True)[0]
-    print(f'agent action selection histogram:\n{-np.sort(-hist)}')
-
-
 if __name__ == '__main__':
 
     # create environment
@@ -66,5 +56,5 @@ if __name__ == '__main__':
                   + f'   loss = {np.mean(losses[-1000:]): .2e}')
 
     # evaluate trained agent
-    evaluate_agent(agent, env)
+    env.evaluate_agent(agent)
 
