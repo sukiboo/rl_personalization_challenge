@@ -103,6 +103,7 @@ class SampleEnv(gym.Env):
 
     def evaluate_agent(self, agent, num_s=100000):
         '''evaluate the agent's performance on the randomly sampled states'''
+        self.restart()
         S = self.observe(num=num_s)
         A = agent(S).numpy().argmax(axis=1)
         R = self.compute_reward(S,A)
