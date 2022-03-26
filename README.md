@@ -1,5 +1,9 @@
 # Reinforcement Learning Personalization Challenge
-In this challenge your goal is to train an RL agent to solve a synthetic personalization task represented by the contextual bandit environment.
+In this challenge your goal is to train an RL agent to solve a personalization task that is simulated as a synthetic contextual bandit.
+
+In the given environment the state space is continuous and is reperesented by a `100`-dimensional hypercube, and the action space is discrete and consists of `100` fixed `100`-dimensional vectors. The reward signal is a bit convoluted in its nature but it's intentionally made this way to mimic the human behavioral preferencing (*and we can discuss what it actually means or how it's designed in more detail*).
+
+The rationale behind such an environment is the following: the set of available actions represents the *possible recommendations* and the observed states are the parameterized representations of the *persons* to whom the recommendations are provided; for each state-action pair the received reward value represents the *suitability* of the provided recommendation for the given person with `1` being the best recomendation and `-1` being the worst.
 
 ## Setup
 Install the dependancies with `pip install -r requirements.txt`, then run with `python main.py`.
