@@ -1,5 +1,5 @@
-# Sample Hyperpersonalization Environment
-Train an RL agent to solve a synthetic contextual bandit environment.
+# Reinforcement Learning Personalization Challenge
+In this challenge your goal is to train an RL agent to solve a synthetic personalization task represented by the contextual bandit environment.
 
 ## Setup
 Install the dependancies with `pip install -r requirements.txt`, then run with `python main.py`.
